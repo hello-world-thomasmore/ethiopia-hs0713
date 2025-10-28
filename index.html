@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1.0,maximum-scale=1.0"
+  />
+  <meta name="color-scheme" content="dark" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Ethiopia • Dried Legumes Sourcing Pack (HS 0713)</title>
+  <style>
+    :root {
+      /* Colors */
+      --bg: #0f172a;                /* page background: deep navy */
+      --card: #1e2538;              /* card background */
+      --text-main: #f8fafc;         /* main text */
+      --text-dim: #94a3b8;          /* secondary text */
+      --accent: #38bdf8;            /* blue highlight */
+      --border: rgba(255,255,255,0.08);
+
+      /* Radius / shadow */
+      --radius-lg: 18px;
+      --radius-sm: 10px;
+      --shadow-card: 0 30px 80px rgba(0,0,0,0.6);
+
+      /* Spacing */
+      --page-pad-mobile: 1.25rem;
+      --page-pad-desktop: 2rem;
+      --section-gap: 2rem;
+      --card-pad: 1.5rem;
+      --gap-tight: 0.5rem;
+      --gap-mid: 0.75rem;
+      --gap-loose: 1rem;
+
+      /* Typography scale */
+      --font-stack: system-ui,-apple-system,BlinkMacSystemFont,"Inter","Roboto","Segoe UI",sans-serif;
+      --text-xs: clamp(0.7rem, 0.15vw + 0.65rem, 0.75rem);
+      --text-sm: clamp(0.8rem, 0.2vw + 0.7rem, 0.9rem);
+      --text-base: clamp(0.9rem, 0.25vw + 0.8rem, 1rem);
+      --text-lg: clamp(1rem, 0.3vw + 0.9rem, 1.1rem);
+      --text-xl: clamp(1.4rem, 0.5vw + 1.1rem, 1.7rem);
+      --line-base: 1.5;
+      --line-tight: 1.4;
+      --line-title: 1.25;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      /* prevent long words from blowing layout on mobile */
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-stack);
+      line-height: var(--line-base);
+      display: flex;
+      justify-content: center;
+      padding: var(--page-pad-mobile) var(--page-pad-mobile) 4rem;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding: var(--page-pad-desktop) var(--page-pad-desktop) 4rem;
+      }
+    }
+
+    .page {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--section-gap);
+      min-width: 0; /* important for mobile wrapping in flex parents */
+    }
+
+    /* ===== HEADER ===== */
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-mid);
+      min-width: 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap-tight);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      line-height: var(--line-tight);
+    }
+
+    .tag {
+      background: rgba(56,189,248,0.12);
+      border: 1px solid rgba(56,189,248,0.4);
+      color: var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.6rem;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    h1 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+      line-height: var(--line-title);
+    }
+
+    h1 .country {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: var(--text-base);
+      color: var(--text-dim);
+      max-width: 680px;
+      line-height: var(--line-base);
+    }
+
+    /* ===== CARD WRAPPER ===== */
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--card-pad);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-loose);
+      box-shadow: var(--shadow-card);
+      min-width: 0;
+    }
+
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--gap-tight);
+      min-width: 0;
+    }
+
+    .card-title {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      line-height: var(--line-title);
+      min-width: 0;
+    }
+
+    .badge {
+      background: rgba(148,163,184,0.15);
+      color: var(--text-dim);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-xs);
+      line-height: 1.2;
+      padding: 0.4rem 0.5rem;
+      border: 1px solid rgba(148,163,184,0.3);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .card-body {
+      display: grid;
+      gap: var(--gap-loose);
+      font-size: var(--text-base);
+      color: var(--text-main);
+      min-width: 0;
+    }
+
+    /* ===== SUPPLIER BLOCKS ===== */
+
+    .supplier-block {
+      background: rgba(15,23,42,0.4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      display: grid;
+      gap: var(--gap-mid);
+      min-width: 0;
+    }
+
+    .supplier-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--gap-tight);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--accent);
+      line-height: var(--line-tight);
+      min-width: 0;
+    }
+
+    .supplier-notes {
+      font-size: var(--text-sm);
+      color: var(--text-dim);
+      line-height: var(--line-tight);
+    }
+
+    /* ===== QC CHECKLIST ===== */
+
+    ul.checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: var(--gap-tight);
+      min-width: 0;
+    }
+
+    ul.checklist li {
+      background: rgba(15,23,42,0.4);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      font-size: var(--text-sm);
+      line-height: var(--line-tight);
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      min-width: 0;
+    }
+
+    ul.checklist li span.bullet {
+      flex-shrink: 0;
+      min-width: 0.6rem;
+      min-height: 0.6rem;
+      border-radius: 999px;
+      background: var(--accent);
+      margin-top: 0.4rem;
+      box-shadow: 0 0 12px rgba(56,189,248,0.8);
+    }
+
+    /* ===== 3-STEP PLAN ===== */
+
+    .steps {
+      display: grid;
+      gap: var(--gap-loose);
+      min-width: 0;
+    }
+
+    .step-row {
+      background: rgba(15,23,42,0.4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      display: grid;
+      gap: var(--gap-mid);
+      min-width: 0;
+    }
+
+    .step-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: var(--gap-tight);
+      min-width: 0;
+    }
+
+    .step-num {
+      background: var(--accent);
+      color: #0f172a;
+      font-weight: 600;
+      font-size: var(--text-xs);
+      border-radius: var(--radius-sm);
+      line-height: 1.2;
+      padding: 0.4rem 0.5rem;
+      box-shadow: 0 10px 30px rgba(56,189,248,0.6);
+    }
+
+    .step-title {
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: var(--line-title);
+      min-width: 0;
+    }
+
+    .step-desc {
+      font-size: var(--text-sm);
+      color: var(--text-dim);
+      line-height: var(--line-base);
+      min-width: 0;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+      font-size: var(--text-xs);
+      color: var(--text-dim);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 1rem;
+      line-height: var(--line-tight);
+      display: grid;
+      gap: var(--gap-tight);
+    }
+
+    footer .confidential {
+      color: var(--text-main);
+      font-weight: 500;
+      line-height: var(--line-tight);
+    }
+
+    footer .footnote {
+      color: var(--text-dim);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: var(--line-tight);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="tag-row">
+        <div class="tag">Ethiopia</div>
+        <div class="tag">Dried Legumes</div>
+        <div class="tag">HS 0713</div>
+        <div class="tag">Sourcing Pack</div>
+        <div class="tag">Oct 2025</div>
+      </div>
+
+      <h1>
+        <span class="country">Ethiopia</span>
+        Dried Legumes Sourcing Pack
+      </h1>
+
+      <div class="subtitle">
+        For buyers of chickpeas and lentils under HS 0713 (dried leguminous vegetables, shelled).
+        This pack includes a supplier shortlist, a basic quality check list, and the 3-step start plan.
+        Goal: predictable cost and predictable timing.
+      </div>
+    </header>
+
+    <!-- SUPPLIER SHORTLIST -->
+    <section class="card">
+      <div class="card-header">
+        <div class="card-title">Supplier Shortlist</div>
+        <div class="badge">Names withheld for confidentiality</div>
+      </div>
+
+      <div class="card-body">
+        <div class="supplier-block">
+          <div class="supplier-head">
+            <div>Supplier A — Chickpeas (Amhara Region)</div>
+            <div>Export-ready</div>
+          </div>
+          <div class="supplier-notes">
+            Cleans, grades, and bags chickpeas in 25 kg / 50 kg for export.<br />
+            Works to agreed moisture and size spec.<br />
+            Food-safety documents available.
+          </div>
+        </div>
+
+        <div class="supplier-block">
+          <div class="supplier-head">
+            <div>Supplier B — Lentils (Oromia Region)</div>
+            <div>Traceability</div>
+          </div>
+          <div class="supplier-notes">
+            Lentils with moisture control and metal detection.<br />
+            Batch traceability kept by lot.<br />
+            Export experience.
+          </div>
+        </div>
+
+        <div class="supplier-block">
+          <div class="supplier-head">
+            <div>Supplier C — Pulses Packer</div>
+            <div>Private label</div>
+          </div>
+          <div class="supplier-notes">
+            Packs chickpeas and lentils under buyer label.<br />
+            25 kg / 50 kg sealed bags, date-coded and weight-checked.
+          </div>
+        </div>
+
+        <div class="supplier-block">
+          <div class="supplier-head">
+            <div>Supplier D — Mixed Pulses Processor</div>
+            <div>Spec control</div>
+          </div>
+          <div class="supplier-notes">
+            Size sorting and defect removal (stones, broken grain, other foreign material).<br />
+            Can match retail spec or foodservice spec.
+          </div>
+        </div>
+
+        <div class="supplier-block">
+          <div class="supplier-head">
+            <div>Supplier E — High Volume Exporter</div>
+            <div>Capacity</div>
+          </div>
+          <div class="supplier-notes">
+            Large seasonal capacity in pulses.<br />
+            Used to moving full containers on the Ethiopia → Djibouti → port route.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALITY CHECKLIST -->
+    <section class="card">
+      <div class="card-header">
+        <div class="card-title">Quality Check: Incoming Sample</div>
+        <div class="badge">Chickpeas / Lentils</div>
+      </div>
+
+      <div class="card-body">
+        <ul class="checklist">
+          <li>
+            <span class="bullet"></span>
+            <div>Moisture is in the agreed range for that crop.</div>
+          </li>
+          <li>
+            <span class="bullet"></span>
+            <div>Size / calibration is even. No major size mix.</div>
+          </li>
+          <li>
+            <span class="bullet"></span>
+            <div>Clean: no stones, no metal, no other foreign material in the 25 kg test bag.</div>
+          </li>
+          <li>
+            <span class="bullet"></span>
+            <div>Cook test: normal texture and taste after cooking (no off-flavor).</div>
+          </li>
+          <li>
+            <span class="bullet"></span>
+            <div>Bag weight is correct, bag is sealed, and date code is present.</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HOW TO START -->
+    <section class="card">
+      <div class="card-header">
+        <div class="card-title">How to Start (≈1 Week)</div>
+        <div class="badge">Step 1 • Step 2 • Step 3</div>
+      </div>
+
+      <div class="card-body steps">
+        <div class="step-row">
+          <div class="step-head">
+            <div class="step-num">1</div>
+            <div class="step-title">Shortlist suppliers</div>
+          </div>
+          <div class="step-desc">
+            We introduce five Ethiopian suppliers that already meet food-safety requirements and already export.
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-head">
+            <div class="step-num">2</div>
+            <div class="step-title">Run samples</div>
+          </div>
+          <div class="step-desc">
+            One 25 kg bag of chickpeas and one 25 kg bag of lentils.<br />
+            You check moisture, size, cleanliness, and how it cooks.
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-head">
+            <div class="step-num">3</div>
+            <div class="step-title">First order & ship</div>
+          </div>
+          <div class="step-desc">
+            If the samples pass, you place your first order.<br />
+            We arrange the container on the Ethiopia → Djibouti → port route and ship.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="confidential">
+        Ethiopia Dried Legumes Sourcing Pack · HS 0713 · October 2025
+      </div>
+      <div class="footnote">
+        Supplier names are withheld for confidentiality. This pack supports sourcing decisions on chickpeas and lentils from Ethiopia. For full supplier IDs, food-safety documents, or volume planning, contact the Ethiopia dried legumes team.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
